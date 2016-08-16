@@ -16,7 +16,6 @@ Deploying DC/OS Vagrant involves creating a local cluster of VirtualBox VMs usin
 - [Deploy](/docs/deploy.md)
 - [Configure](/docs/configure.md)
 - [Upgrade](/docs/upgrade.md)
-- [Examples](/examples)
 
 
 # DC/OS Vagrant Documentation

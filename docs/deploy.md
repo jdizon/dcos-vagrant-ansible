@@ -46,7 +46,6 @@ The default guest OS box from [dcos-vagrant-box](https://github.com/dcos/dcos-va
   - [Host Manager Plugin](https://github.com/smdahlen/vagrant-hostmanager) - manage /etc/hosts
   - (Optional) [VBGuest Plugin](https://github.com/dotless-de/vagrant-vbguest) - manage vbox guest additions
 - [VirtualBox](https://www.virtualbox.org/) (>= 5.0.20) - virtualization engine
-- (Optional) [jq](https://stedolan.github.io/jq/) - json parser used by examples
 
 Known Incompatibilities:
 
@@ -204,7 +203,7 @@ vagrant up m1 a1 a2 p1 boot
 
 ## Medium Cluster
 
-A medium cluster supports the installation of a [minimally configured Cassandra](/examples/oinker#install-cassandra).
+A medium cluster supports the installation of some minimally configured scheduler services.
 
 Requires > 10GB free memory (using the example [VagrantConfig](/VagrantConfig.yaml.example)).
 

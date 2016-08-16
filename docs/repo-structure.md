@@ -6,7 +6,6 @@
 	├── ci                             # Continuous integration scripts
 	├── docs                           # Misc images or supporting documentation
 	├── etc                            # DC/OS config templates
-	├── examples                       # Example app/service definitions
 	├── lib                            # DC/OS Vagrant plugin source
 	├── provision                      # Machine provisioning scripts and artifacts
 	├── <dcos_generate_config.sh>      # (Required) DC/OS installer

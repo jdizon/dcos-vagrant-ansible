@@ -55,9 +55,6 @@ p1:
   memory: 1024
   memory-reserved: 512
   type: agent-public
-  aliases:
-  - spring.acme.org
-  - oinker.acme.org
 p2:
   ip: 192.168.65.70
   cpus: 2

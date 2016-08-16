@@ -1,4 +1,4 @@
-DC/OS Vagrant
+DC/OS Vagrant Ansible
 ==================
 
 Quickly provision a [DC/OS](https://github.com/dcos/dcos) cluster on a local machine for development, testing, or demonstration.

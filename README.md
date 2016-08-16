@@ -5,18 +5,25 @@ Quickly provision a [DC/OS](https://github.com/dcos/dcos) cluster on a local mac
 
 Deploying DC/OS Vagrant involves creating a local cluster of VirtualBox VMs using the [dcos-vagrant-box](https://github.com/dcos/dcos-vagrant-box) base image and then installing [DC/OS](https://dcos.io/).
 
+This fork of DC/OS Vagrant uses Ansible for node provisioning.
+
 ### Issue Tracking
 
-- Issue tracking is in [DCOS JIRA](https://dcosjira.atlassian.net/projects/VAGRANT/).
-- Remember to make a DC/OS JIRA account and login so you can get update notifications!
+- Issue tracking for **dcos-vagrant-ansible** is in Github.
+- Issue tracking for **DC/OS** itself are in [DC/OS JIRA](https://dcosjira.atlassian.net/projects/VAGRANT/).
 
+### Limitations
+
+- DC/OS Vagrant Ansible only supports the [custom advanced installation](https://dcos.io/docs/latest/administration/installing/custom/advanced/) of DC/OS (not the CLI or GUI install methods).
+- Debugging Ansible failures can be a bit complicated due to buffering of the logs.
+- [DC/OS Vagrant](https://github.com/dcos/dcos-vagrant/) is the local deployment method officially supported by Mesosphere. This Ansible version is provided AS IS.
 
 # Where Do I Start?
 
 - [Deploy](/docs/deploy.md)
 - [Configure](/docs/configure.md)
 - [Upgrade](/docs/upgrade.md)
-
+- [DC/OS Vagrant Examples](https://github.com/dcos/dcos-vagrant/tree/master/examples)
 
 # DC/OS Vagrant Documentation
 

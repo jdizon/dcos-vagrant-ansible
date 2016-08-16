@@ -10,10 +10,11 @@
     replace="\1 {{ dockerd_arg }} "
   register: registry_config_result
 
-- name: Reload systemd units (for new config)
-  command: systemctl daemon-reload
-  when: registry_config_result.changed
+- when: registry_config_result.changed
+  block:
 
-- name: Restart Docker (for new config)
-  command: systemctl restart docker
-  when: registry_config_result.changed
+  - name: Reload systemd units (for new config)
+    command: systemctl daemon-reload
+
+  - name: Restart Docker (for new config)
+    command: systemctl restart docker

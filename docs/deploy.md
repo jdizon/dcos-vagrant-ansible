@@ -238,10 +238,12 @@ Adding a node will not immediately change scheduled services by may allow pendin
 # Example initial cluster deploy
 vagrant up m1 a1 p1 boot
 # Add a private agent node
-vagrant up a2
+vagrant up m1 a1 a2 p1 boot
 # Add a public agent node
-vagrant up p2
+vagrant up m1 a1 a2 p1 p2 boot
 ```
+
+Note: Unlike the non-ansible DC/OS Vagrant, ansible requires all nodes to be respecified when provisioning but will detect that the existing nodes don't need to be reprovisioned and skip them.
 
 ## Remove an Agent Node
 

@@ -156,7 +156,14 @@ end
 ## One Time Setup
 ##############################################
 
-Vagrant.require_version '>= 1.8.1'
+if Vagrant::VERSION == '1.8.5'
+  ui = Vagrant::UI::Colored.new
+  ui.error 'Unsupported Vagrant Version: 1.8.5'
+  ui.error 'For more info, visit https://github.com/dcos/dcos-vagrant/blob/master/docs/troubleshooting.md#ssh-authentication-failure'
+  ui.error ''
+end
+
+Vagrant.require_version '>= 1.8.4', '!= 1.8.5'
 
 validate_plugins || exit(1)
 
@@ -222,6 +229,10 @@ Vagrant.configure(2) do |config|
 
         override.vm.network :private_network, ip: machine_type['ip']
       end
+
+      # Hack to remove loopback host alias that conflicts with vagrant-hostmanager
+      # https://dcosjira.atlassian.net/browse/VAGRANT-15
+      machine.vm.provision :shell, inline: "sed -i'' '/^127.0.0.1\\t#{machine.vm.hostname}\\t#{name}$/d' /etc/hosts"
 
       # provision a shared SSH key (required by DC/OS SSH installer)
       machine.vm.provision :dcos_ssh, name: 'Shared SSH Key'
